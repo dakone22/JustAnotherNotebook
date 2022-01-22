@@ -1,0 +1,29 @@
+// Place all the styles related to the notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.highlight {
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+#btn-copy {
+  position: relative;
+  top: 0;
+  left: 90%;
+  display: block;
+  padding: 0.25rem 0.5rem;
+  font-size: .65em;
+  border: 1px solid;
+  border-radius: 0.25rem;
+}
+
+// https://stackoverflow.com/questions/248011/how-do-i-wrap-text-in-a-pre-tag
+#content {
+  overflow-x: auto !important;
+  white-space: pre-wrap !important;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap !important;      /* Opera 4-6 */
+  white-space: -o-pre-wrap !important;    /* Opera 7 */
+  word-wrap: break-word !important;       /* Internet Explorer 5.5+ */
+}

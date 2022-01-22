@@ -1,0 +1,74 @@
+ru:
+  notes:
+    messages:
+      created: "Заметка была успешно создана."
+      updated: "Заметка была успешно обновлена."
+      destroyed: "Заметка была успешно удалена."
+  auth:
+    messages:
+      sign_in_error: "Неверный логин или пароль."
+      sign_up_success: "Регистрация успешна."
+  views:
+    navbar:
+      my_votes: "Мои Заметки"
+      new_vote: "Новая Заметка"
+      login: "Вход"
+      logout: "Выход"
+      welcome: "Добро пожаловать,"
+    forms:
+      back: "Назад"
+      username: "Логин"
+      password: "Пароль"
+      log_in: "Войти"
+      sign_up: "Регистрация"
+      email: "Почта"
+      submit: "Отправить"
+      title: "Заголовок"
+      notify_at: "Дата"
+      content: "Содержание"
+      errors:
+        one: "Ошибка найдена перед сохранением."
+        other: "%{count} ошибки найдено перед сохранением."
+    notes:
+      edit:
+        title: "Редактирование заметки"
+      index:
+        title: "Заметки"
+        table:
+          title: "Заголовок"
+          notify_date: "Дата"
+          actions: "Действия"
+          show: "Показать"
+          edit: "Редактировать"
+          destroy: "Удалить"
+          confirm: "Вы уверены?"
+        new_note: "Новая заметка"
+      new:
+        title: "Новая заметка"
+      show:
+        author: "Автор"
+        untitled: "Без названия"
+        no_author: "Аноним"
+        notify_at: "Дата"
+        no_notify_at: "Без даты"
+        edit: "Редактировать"
+        copy: "Копировать"
+    sessions:
+      new:
+        title: "Вход"
+    users:
+      new:
+        title: "Регистрация"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: "Эта почта уже занята."
+            username:
+              taken: "Этот логин уже занят."
+        note:
+          attributes:
+            content:
+              blank: "Содержание не должно быть пустым."

@@ -30,4 +30,76 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  notes:
+    messages:
+      created: "Note was successfully created."
+      updated: "Note was successfully updated."
+      destroyed: "Note was successfully deleted."
+  auth:
+    messages:
+      sign_in_error: "Incorrect username or password."
+      sign_up_success: "Sign up success."
+  views:
+    navbar:
+      my_votes: "My Notes"
+      new_vote: "New Note"
+      login: "Log In"
+      logout: "Log Out"
+      welcome: "Welcome,"
+    forms:
+      back: "Back"
+      username: "Username"
+      password: "Password"
+      log_in: "Log In"
+      sign_up: "Sign Up"
+      email: "Email"
+      submit: "Submit"
+      title: "Title"
+      notify_at: "Notify At"
+      content: "Content"
+      errors:
+        one: "Error prohibited from being saved"
+        other: "%{count} errors prohibited from being saved"
+    notes:
+      edit:
+        title: "Editing Note"
+      index:
+        title: "Notes"
+        table:
+          title: "Title"
+          notify_date: "Notify date"
+          actions: "Actions"
+          show: "Show"
+          edit: "Edit"
+          destroy: "Delete"
+          confirm: "Are you sure?"
+        new_note: "New Note"
+      new:
+        title: "New Note"
+      show:
+        author: "Author"
+        untitled: "Untitled"
+        no_author: "Anon"
+        notify_at: "Notify at"
+        no_notify_at: "No notify"
+        edit: "Edit"
+        copy: "Copy"
+    sessions:
+      new:
+        title: "Log In"
+    users:
+      new:
+        title: "Sign Up"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: "This email already taken."
+            username:
+              taken: "This username already taken."
+        note:
+          attributes:
+            content:
+              blank: "Content shouldn't be blank!"

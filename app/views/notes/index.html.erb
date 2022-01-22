@@ -1,0 +1,33 @@
+<% flash[:notice]&.tap do |notice| %>
+  <div id="notice" class="alert alert-success"><%= notice %></div>
+<% end %>
+
+<h1><%= t('views.notes.index.title') %></h1>
+
+<table class="table table-hover mb-5">
+  <thead>
+    <tr>
+      <th class="col-5"><%= t('views.notes.index.table.title') %></th>
+      <th class="col-3"><%= t('views.notes.index.table.notify_date') %></th>
+      <th class="col-2"><%= t('views.notes.index.table.actions') %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notes.filter { |note| @current_user.can_view(note) }.each do |note| %>
+      <tr>
+        <td><%= note.title&.presence ? note.title : 'Untitled' %></td>
+        <td><%= note.notify_at&.presence ? note.notify_at : '' %></td>
+        <td class="text-center">
+          <div class="btn-group">
+            <%= link_to t('views.notes.index.table.show'), note, class: 'btn btn-primary btn-sm' %>
+            <%= link_to t('views.notes.index.table.edit'), edit_note_path(note), class: 'btn btn-outline-primary btn-sm' if @current_user.can_edit(note) %>
+            <%= link_to t('views.notes.index.table.destroy'), note, method: :delete, data: { confirm: t('views.notes.index.table.confirm') }, class: 'btn btn-outline-danger btn-sm' %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('views.notes.index.new_note'), new_note_path, class: 'btn btn-outline-success col-12' %>

@@ -1,0 +1,35 @@
+<h1><%= @note.title.empty? ? t('views.notes.show.untitled') : @note.title %></h1>
+<div class="row">
+  <div class="col-3">
+    <% flash[:notice]&.tap do |notice| %>
+      <div id="notice" class="alert alert-success"><%= notice %></div>
+    <% end %>
+
+    <p>
+      <strong><%= t('views.notes.show.author') %></strong>
+      <%= @note.anonymous? ? t('views.notes.show.no_author') : @note.user.username %>
+    </p>
+
+    <p>
+      <% if @note.notify_at.presence %>
+        <strong><%= t('views.notes.show.notify_at') %></strong>
+        <%= @note.notify_at %>
+      <% else %>
+        <strong><%= t("views.notes.show.no_notify_at") %></strong>
+      <% end %>
+    </p>
+
+    <div class="btn-group col-12">
+      <%= link_to t('views.notes.show.edit'), edit_note_path(@note), class: 'btn btn-primary', id: 'edit' if @current_user.can_edit @note %>
+      <%= render 'back' %>
+    </div>
+  </div>
+
+  <div class="highlight col-9">
+    <button class="btn btn-outline-success" id="btn-copy"><%= t('views.notes.show.copy') %></button>
+    <pre id="content"><%= @note.content %></pre>
+  </div>
+</div>
+<% content_for :js do %>
+  <% javascript_pack_tag 'copy_handler', 'data-turbolinks-track': 'reload' %>
+<% end %>

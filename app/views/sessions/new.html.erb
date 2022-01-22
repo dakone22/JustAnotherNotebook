@@ -1,0 +1,24 @@
+<h1><%= t('views.sessions.new.title') %></h1>
+
+<div>
+<% flash[:error]&.tap do |error| %>
+  <div class="alert alert-danger"><%= error %></div>
+<% end %>
+
+<%= form_for(:user, url: sessions_path, method: :post) do |f| %>
+
+  <div class="mb-3">
+    <%= f.label :username, t('views.forms.username'), class: 'form-label' %>
+    <%= f.text_field :username, class: 'form-control col-12', required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :password, t('views.forms.password'), class: 'form-label' %>
+    <%= f.password_field :password, class: 'form-control col-12', required: true %>
+  </div>
+
+  <%= f.submit t('views.forms.log_in'), class: "btn btn-primary col-12 mb-2" %>
+<% end %>
+
+<%= button_to t('views.forms.sign_up'), signup_url, method: :get, class: "btn btn-outline-primary col-12" %>
+</div>
